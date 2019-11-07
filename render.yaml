@@ -53,9 +53,15 @@ services:
   - key: MM_FILESETTINGS_AMAZONS3BUCKET
     value: mattermost
   - key: MM_FILESETTINGS_AMAZONS3ACCESSKEYID
-    sync: false
+    fromService:
+      type: pserv
+      name: mattermost-minio
+      envVarKey: MINIO_ACCESS_KEY
   - key: MM_FILESETTINGS_AMAZONS3SECRETACCESSKEY
-    sync: false
+    fromService:
+      type: pserv
+      name: mattermost-minio
+      envVarKey: MINIO_SECRET_KEY
   - key: MM_FILESETTINGS_AMAZONS3ENDPOINT
     fromService:
       type: pserv
