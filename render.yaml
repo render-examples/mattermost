@@ -8,6 +8,7 @@ services:
   env: docker
   dockerfilePath: ./minio/Dockerfile
   dockerContext: ./minio
+  autoDeploy: false
   disk:
     name: data
     mountPath: /data
@@ -23,6 +24,7 @@ services:
   plan: starter
   dockerfilePath: ./app/Dockerfile
   dockerContext: ./app
+  autoDeploy: false
   disk:
     name: config
     mountPath: /mattermost/config
